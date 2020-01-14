@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+
+  <title>Automobile</title>
+
+</head>
+<style>
+ .logo{
+         margin: auto;
+     }
+     .logo img{
+         margin-left: 40%;
+     }
+</style>
+
+<body>
+    <div class="logo" id="logo">
+        <img src="img/logo.png" alt="">
+    </div>
+  <form action="#">
+    <div id="container" class="container">
+      
+      <div class="row">
+        <div class=" main1 col-md-12 mb-3">
+          <label for="validationDefault01">Kartin nomresi</label>
+          <input id="input1" type="text" class="form-control" id="validationDefault01" placeholder="---- ---- ---- ----"
+            required maxlength="19" />
+          <span id="main1s"></span>
+        </div>
+        <div class=" main2 col-md-5 mb-3">
+          <label for="validationDefault04">Bitme tarixi(A/il)</label>
+          <input id="input2" type="text" class="form-control" id="validationDefault04" placeholder="--/--" required
+            maxlength="5" />
+          <span id="main2s"></span>
+        </div>
+        <div class=" main3 col-md-5 mb-3">
+          <label for="validationDefault05">CVV@/VCV2)</label>
+          <input id="input3" type="text" class="form-control" id="validationDefault05" placeholder="---" maxlength="3"
+            required />
+          <span id="main3s"></span>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <p id="error" class="d-none text-danger">Your information is false</p>
+
+          <button type="button" id="button" class="col-md-12 mb-3 btn btn-secondary">Tesdiqle</button>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+  <script src="main1.js"></script>
+  <script src="user.js"></script>
+</body>
+
+</html>

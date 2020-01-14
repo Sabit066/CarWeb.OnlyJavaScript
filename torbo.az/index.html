@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta Marka="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Automobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+     .logo{
+         margin: auto;
+     }
+     .logo img{
+         margin-left: 40%;
+     }
+     .container{
+         background-color: black;
+     }
+     .card{
+         background-color: brown;
+         border: 1px solid white;
+         color: white;
+     }
+</style>
+<body>
+
+    <div class="logo" id="logo">
+        <img src="img/logo.png" alt="">
+    </div>
+    <script>
+        
+     let Cars={
+        car1:{
+         Marka:"Niva",
+            img:"img/niva1.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car2:{
+         Marka:"Niva",
+            img:"img/niva2.jpg",
+            Qiymet:"12000",
+            minQiymet:"5000",
+            BuraxilisIli:"2013",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.9.2019",
+        },
+        car3:{
+         Marka:"Niva",
+
+            img:"img/niva3.jpg",
+            Qiymet:"11000",
+            minQiymet:"3000",
+            BuraxilisIli:"2011",
+            Yuruyus:"33500",
+            QoyulmaTarixi:"1.10.2019",
+        },
+        car4:{
+         Marka:"Niva",
+
+            img:"img/niva4.jpg",
+            Qiymet:"13000",
+            minQiymet:"5000",
+            BuraxilisIli:"2014",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car5:{
+         Marka:"Niva",
+
+            img:"img/niva5.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car6:{
+         Marka:"Niva",
+
+            img:"img/niva6.jpg",
+            Qiymet:"17000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+
+        },
+        car7:{
+         Marka:"Niva",
+
+            img:"img/niva7.jpg",
+            Qiymet:"9000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car8:{
+         Marka:"Niva",
+
+            img:"img/niva8.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car9:{
+         Marka:"Niva",
+
+            img:"img/niva9.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car10:{
+         Marka:"Niva",
+
+            img:"img/niva10.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car11:{
+         Marka:"Niva",
+
+            img:"img/niva1.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car12:{
+         Marka:"Niva",
+
+            img:"img/niva2.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },car13:{
+         Marka:"Niva",
+
+            img:"img/niva3.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car14:{
+         Marka:"Niva",
+
+            img:"img/niva4.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car15:{
+         Marka:"Niva",
+
+            img:"img/niva5.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car16:{
+         Marka:"Niva",
+
+            img:"img/niva6.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        },
+        car17:{
+         Marka:"Niva",
+
+            img:"img/niva7.jpg",
+            Qiymet:"15000",
+            minQiymet:"5000",
+            BuraxilisIli:"2015",
+            Yuruyus:"23000",
+            QoyulmaTarixi:"10.10.2019",
+        }
+    }
+    </script>
+    <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Automobile</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        color: white;
+    }
+
+    .card-body {
+        margin-left: 10%;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+    .logo{
+         margin: auto;
+     }
+     .logo img{
+         margin-left: 40%;
+     }
+     .container{
+         background-color: black;
+     }
+     .card{
+         background-color: brown;
+         border: 1px solid white;
+         color: white;
+     }
+</style>
+
+<body>
+        <div class="logo" id="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+    <div class="row" id="credit">
+        <div class=" main1 col-md-5 mb-3">
+            <label for="input1">Ilkin odenisi daxil edin</label>
+            <input id="input1" type="text" class="form-control" id="validationDefault01">
+        </div>
+        <div class=" main2 col-md-5 mb-3">
+            <label for="input2">Ayliq odyecyniz mebleg</label>
+            <input id="input2" type="text" class="form-control" id="validationDefault04">
+            
+        </div >
+        <div class=" main2 col-md-6 mb-3">
+                <select id="select" class="form-control" >
+                        <option value="6">6 ay</option>
+                        <option value="12">12 ay</option>
+                        <option value="18">18 ay</option>
+                    </select>
+        </div>
+        <div class=" main2 col-md-12 mb-3">
+                <button type="button" id="btn1" class="col-md-5 mb-3 btn btn-secondary">Hesabla</button>
+                <button type="button" id="btn2" class="col-md-5 mb-3 btn btn-secondary">Ode</button>
+        </div>        
+    </div> 
+
+    <script>
+
+        let carn = {
+            name: "Niva",
+            img: "img/niva1.jpg",
+            price: "Price",
+            minprice: "Minimum Price",
+            year: "Il",
+            walked: "Yururyus",
+            date: "Qoyulma tarixi",
+        }
+
+        let dom = {
+            createElement: function (tagName, className, cssProps, location) {
+                //create dom element
+                let element = document.createElement(tagName);
+                //check if this element is valid html element
+                if (element != null) {
+                    //if so, then validate classname existance
+                    if (this._isValidValue(className)) {
+                        element.className = className;
+                    }
+                    //enumerate all css properties given as  object
+                    for (let f in cssProps) {
+                        //check if object key is valid attribute
+                        if (this._isValidAttr(f)) {
+                            //then use it as attribute
+                            element[f] = cssProps[f];
+                        }
+                        //otherwise,it is just style.Use it as style..
+                        else {
+                            element.style[f] = cssProps[f];
+                        }
+                    }
+                }
+                location.appendChild(element);
+                return element;
+            },
+            _isValidValue: function (val) {
+                return (typeof (val) !== "undefined" && val)
+            },
+            _isValidAttr: function (attr) {
+                return (attr == 'src' || attr == 'href' || attr == 'innerText' || attr == 'id');
+            }
+        }
+
+        let obj = JSON.parse(localStorage.getItem("Car"));
+        let maindiv = dom.createElement("div", "container", " ", document.body);
+        let carddiv = dom.createElement("div", "card", { "width": "45%" }, maindiv);
+        let image = dom.createElement("img", "card-img-top", { "alt": "card-img", "src": obj.img }, carddiv);
+        let divul = dom.createElement("div", "divul", { "width": "45%" }, maindiv);
+        let divcommet = dom.createElement("div", "divcommet", { "width": "45%" }, carddiv);
+        let ul = dom.createElement("ul", "ul", " ", divul);
+
+
+
+        for (let f in obj) {
+
+            let li = dom.createElement("li", "li", "", ul);
+            let label = dom.createElement("label", "label", { "innerText": f }, li);
+            let div = dom.createElement("div", "div", { "innerText": obj[f] }, li);
+            divcommet.innerText = "Masin full veziyyetdedir,problemi yoxdur,birinci eldir";
+
+        }
+
+        let credit = document.getElementById("credit");
+        maindiv.appendChild(credit);
+        let input1 = document.getElementById("input1");
+        let input2 = document.getElementById("input2");
+        let select = document.getElementById("select");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        input2.addEventListener("keydown",function(e){
+             e.preventDefault();
+        });
+        input1.addEventListener("keydown",function(e){
+                  if(e.keyCode > 64 && e.keyCode < 91){
+                      e.preventDefault();
+                  }
+            });
+        btn1.addEventListener("click", function () {
+            
+
+            let sval = parseInt(select.value);
+            let makval = parseInt(obj.Qiymet);
+            let minval = parseInt(obj.minQiymet);
+            let val = parseInt(input1.value);
+
+           
+            if (val >= minval) {
+                if (sval == 6) {
+                    let result = ((makval - val) +(((makval-val)*4)/100)) / sval;
+                    input2.value = result;
+                }
+                else if (sval == 12) {
+                    result = ((makval - val) * (((makval-val)*10)/100)) / sval;
+                    input2.value = result;
+                }
+                else if (sval == 18) {
+                    result = ((makval - val) * (((makval-val)*4)/100)) / sval;
+                    input2.value = result;
+                }
+            }
+            else {
+                alert("yeniden daxil edin");
+            }
+        })
+
+        btn2.addEventListener("click", function () {
+            document.location = "index1.html"
+        })
+
+
+    </script>
+</body>
+ 
+</html>
